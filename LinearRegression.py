@@ -6,12 +6,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 from matplotlib import style
-from sklearn.metrics import accuracy_score;
-
 
 style.use('ggplot')
 
-df = pd.read_csv("Data/wik2000-2019i.csv")
+df = pd.read_csv("Data/wik2000-2018.csv")
 df.index = df['Date']
 df = df[['Date', 'Adj. Open', 'Adj. High', 'Adj. Low', 'Adj. Close', 'Adj. Volume']]
 df['HL_PCT'] = (df['Adj. High'] - df['Adj. Close']) / df['Adj. Close'] * 100
@@ -33,27 +31,27 @@ y = np.array(df['label'])
 # X = preprocessing.scale(X)
 
 
-x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2,random_state=30)
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=30)
 
 clf = LinearRegression(n_jobs=-1)
 clf.fit(x_train, y_train)
 accuracy = clf.score(x_test, y_test)
-print("Accuracy = ",accuracy)
-forecast_set = clf.predict(X_lately)
-y_predicted = clf.predict(x_train)
-print("real prediction", y_predicted)
+print("Accuracy = ", accuracy)
+forecast_set = clf.predict(X_lately)  # This is what we need the prediction to the future
 
+###################################
+## This for Plotting The Result ##
+##################################
 df['Forecast'] = np.nan
-
 last_date = df.iloc[-1]['Date']
 last_unix = datetime.datetime.fromisoformat(last_date).timestamp()
 one_day = 86400
 next_unix = last_unix + one_day
-
+print(df.tail())
 for i in forecast_set:
     next_day = datetime.datetime.fromtimestamp(next_unix)
     next_unix += one_day
-    df.loc[next_day] = [np.nan for _ in range(len(df.columns)-1)] + [i]
+    df.loc[next_day] = [np.nan for _ in range(len(df.columns) - 1)] + [i]
 
 df[forecast_col].plot()
 df['Forecast'].plot()
