@@ -44,7 +44,7 @@ forecast_set = clf.predict(X_lately)  # This is what we need the prediction to t
 ##################################
 df['Forecast'] = np.nan
 last_date = df.iloc[-1]['Date']
-last_unix = datetime.datetime.fromisoformat(last_date).timestamp()
+last_unix = datetime.datetime.strptime(last_date, '%Y-%m-%d').timestamp()
 one_day = 86400
 next_unix = last_unix + one_day
 for i in forecast_set:
