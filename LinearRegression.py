@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 from matplotlib import style
-
+from statistics import mean
 style.use('ggplot')
 
 df = pd.read_csv("Data/wik2000-2018.csv")
@@ -47,7 +47,6 @@ last_date = df.iloc[-1]['Date']
 last_unix = datetime.datetime.fromisoformat(last_date).timestamp()
 one_day = 86400
 next_unix = last_unix + one_day
-print(df.tail())
 for i in forecast_set:
     next_day = datetime.datetime.fromtimestamp(next_unix)
     next_unix += one_day
