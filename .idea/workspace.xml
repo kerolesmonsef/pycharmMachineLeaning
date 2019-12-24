@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c41c03ca-80b1-42e5-8529-d7b6bbb96892" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Data/Classification/movies_recommendation_data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/O_Scripts/KNN/KNN_recommend_movies.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/O_Scripts/KNN/OwnKKN.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/O_Scripts/ResidualPlot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MachineLearning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MachineLearning.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/O_Scripts/LinearRegression/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/O_Scripts/LinearRegression/test.py" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,16 +39,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Data" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\MachineLearning\Data" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\MachineLearning\Data\Classification" />
+      <recent name="F:\MachineLearning\Data" />
       <recent name="E:\MachineLearning\Scripts\LinearRegression" />
       <recent name="E:\MachineLearning\Data" />
       <recent name="E:\MachineLearning\Scripts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\MachineLearning\Data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -63,7 +73,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.KNN_recommend_movies">
+    <configuration name="KNN_recommend_movies" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MachineLearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/O_Scripts/KNN/KNN_recommend_movies.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="LinearRegression" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MachineLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,6 +107,24 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/O_Scripts/LinearRegression/LinearRegression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="OwnKKN" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MachineLearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/O_Scripts/KNN/OwnKKN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -106,8 +152,38 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MachineLearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Ahmed\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/O_Scripts/LinearRegression/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.LinearRegression" />
+      <item itemvalue="Python.OwnKKN" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.KNN_recommend_movies" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.KNN_recommend_movies" />
+        <item itemvalue="Python.OwnKKN" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.LinearRegression" />
       </list>
     </recent_temporary>
@@ -119,18 +195,19 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e59af6cd" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bbcccb82" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e59af6cd" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f3f61bd0" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bbcccb82" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2be6c319" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
         </treeState>
       </serviceView>
     </option>
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -152,86 +229,72 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lastdsa" />
     <option name="LAST_COMMIT_MESSAGE" value="lastdsa" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576919124727">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1576919124727" />
-    <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1576919465344">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1576919465344" />
-    <state x="349" y="0" key="CommitChangelistDialog2" timestamp="1576917456436">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="349" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576917456436" />
-    <state x="417" y="128" key="EnvironmentVariablesDialog" timestamp="1576332937926">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="417" y="128" key="EnvironmentVariablesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576332937926" />
-    <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1576916145595">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576916145595" />
-    <state width="920" height="179" key="GridCell.Tab.0.bottom" timestamp="1576919131010">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="920" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576919131010" />
-    <state width="920" height="179" key="GridCell.Tab.0.center" timestamp="1576919131009">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="920" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576919131009" />
-    <state width="920" height="179" key="GridCell.Tab.0.left" timestamp="1576919131009">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="920" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576919131009" />
-    <state width="920" height="179" key="GridCell.Tab.0.right" timestamp="1576919131010">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="920" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576919131010" />
-    <state width="1316" height="154" key="GridCell.Tab.1.bottom" timestamp="1576359090975">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1316" height="154" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576359090975" />
-    <state width="1316" height="154" key="GridCell.Tab.1.center" timestamp="1576359090975">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1316" height="154" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576359090975" />
-    <state width="1316" height="154" key="GridCell.Tab.1.left" timestamp="1576359090975">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1316" height="154" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576359090975" />
-    <state width="1316" height="154" key="GridCell.Tab.1.right" timestamp="1576359090975">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1316" height="154" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576359090975" />
-    <state x="555" y="88" key="RollbackChangesDialog" timestamp="1576786424061">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="555" y="88" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576786424061" />
-    <state x="207" y="1" key="SettingsEditor" timestamp="1576918537942">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="207" y="1" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1576918537942" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1576917329317">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1576917329317" />
-    <state x="390" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1576916047285">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="390" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1576916047285" />
-    <state x="578" y="101" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1576332965159">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="578" y="101" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.1366.728@0.0.1366.728" timestamp="1576332965159" />
-    <state x="346" y="49" key="search.everywhere.popup" timestamp="1576332913857">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1576332913857" />
+    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" />
+    <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" />
+    <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" />
+    <state x="349" y="0" key="CommitChangelistDialog2" />
+    <state x="349" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" />
+    <state x="417" y="128" key="EnvironmentVariablesDialog" />
+    <state x="417" y="128" key="EnvironmentVariablesDialog/0.0.1366.728@0.0.1366.728" />
+    <state x="463" y="121" key="FileChooserDialogImpl" />
+    <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" />
+    <state width="920" height="179" key="GridCell.Tab.0.bottom" />
+    <state width="920" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" />
+    <state width="920" height="179" key="GridCell.Tab.0.center" />
+    <state width="920" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" />
+    <state width="920" height="179" key="GridCell.Tab.0.left" />
+    <state width="920" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" />
+    <state width="920" height="179" key="GridCell.Tab.0.right" />
+    <state width="920" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" />
+    <state width="1316" height="154" key="GridCell.Tab.1.bottom" />
+    <state width="1316" height="154" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" />
+    <state width="1316" height="154" key="GridCell.Tab.1.center" />
+    <state width="1316" height="154" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" />
+    <state width="1316" height="154" key="GridCell.Tab.1.left" />
+    <state width="1316" height="154" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" />
+    <state width="1316" height="154" key="GridCell.Tab.1.right" />
+    <state width="1316" height="154" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" />
+    <state x="555" y="88" key="RollbackChangesDialog" />
+    <state x="555" y="88" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" />
+    <state x="207" y="1" key="SettingsEditor" />
+    <state x="207" y="1" key="SettingsEditor/0.0.1366.728@0.0.1366.728" />
+    <state width="498" height="446" key="SwitcherDM" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" />
+    <state x="390" y="190" key="com.intellij.ide.util.TipDialog" />
+    <state x="390" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" />
+    <state x="578" y="101" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" />
+    <state x="578" y="101" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.1366.728@0.0.1366.728" />
+    <state x="346" y="49" key="search.everywhere.popup" />
+    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/O_Scripts/KNN/OwnKKN.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
