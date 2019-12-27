@@ -47,15 +47,10 @@ class OwnLinearRegression:
         return sum((y_orig - y_line) ** 2)
 
     def draw(self):
-        regression_line = [(self.m * x) + b for x in self.xs]
-        r_squared = own.cof_of_deter(self.ys, regression_line)
-        print("Slope = ", m, "b=", b, "r_squared", r_squared)
+        regression_line = [(self.m * x) + self.b for x in self.xs]
+        r_squared = self.cof_of_deter(self.ys, regression_line)
+        print("Slope = ", self.m, "b=", self.b, "r_squared", r_squared)
 
         plt.scatter(self.xs, self.ys, color='red')
         plt.plot(self.xs, regression_line, color='black')
         plt.show()
-
-own = OwnLinearRegression(seed=True)
-m, b = own.best_fit_slope_and_intercept()
-own.draw();
-

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c41c03ca-80b1-42e5-8529-d7b6bbb96892" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/O_Scripts/LinearRegression/Gradient_Descent.py" beforeDir="false" afterPath="$PROJECT_DIR$/O_Scripts/LinearRegression/Gradient_Descent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/O_Scripts/LinearRegression/LinearRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/O_Scripts/LinearRegression/LinearRegression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/O_Scripts/LinearRegression/OwnLinearRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/O_Scripts/LinearRegression/OwnLinearRegression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/O_Scripts/LinearRegression/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/O_Scripts/LinearRegression/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,16 +25,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1UycTWM2XgRvAVPQQlBqYgYDTna" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Data" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -51,20 +59,35 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ownLinearRegression">
-    <configuration name="LinearRegression" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="Gradient_Descent" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MachineLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/LinearRegression/LinearRegression.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/O_Scripts/LinearRegression/Gradient_Descent.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="LinearRegression" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MachineLearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/O_Scripts/LinearRegression/LinearRegression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -94,7 +117,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ownLinearRegression" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MachineLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -103,7 +126,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="E:\MachineLearning\Scripts\LinearRegression\OwnLinearRegression.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -121,7 +144,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/LinearRegression/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/O_Scripts/LinearRegression/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,14 +154,16 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.Gradient_Descent" />
       <item itemvalue="Python.LinearRegression" />
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.ownLinearRegression" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ownLinearRegression" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.Gradient_Descent" />
         <item itemvalue="Python.LinearRegression" />
       </list>
     </recent_temporary>
@@ -156,11 +181,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Python" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Python" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
@@ -169,6 +189,7 @@
         </serviceView>
       </list>
     </option>
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -191,14 +212,15 @@
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="lastdsa" />
     <option name="LAST_COMMIT_MESSAGE" value="lastdsa" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576919124727">
+    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576950202291">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1576919124727" />
+    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1576950202291" />
     <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1576919465344">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -215,46 +237,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576916145595" />
-    <state width="920" height="179" key="GridCell.Tab.0.bottom" timestamp="1576919131010">
+    <state width="1316" height="238" key="GridCell.Tab.0.bottom" timestamp="1576960494151">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="920" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576919131010" />
-    <state width="920" height="179" key="GridCell.Tab.0.center" timestamp="1576919131009">
+    <state width="1316" height="238" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576960494151" />
+    <state width="1316" height="238" key="GridCell.Tab.0.center" timestamp="1576960494151">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="920" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576919131009" />
-    <state width="920" height="179" key="GridCell.Tab.0.left" timestamp="1576919131009">
+    <state width="1316" height="238" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576960494151" />
+    <state width="1316" height="238" key="GridCell.Tab.0.left" timestamp="1576960494151">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="920" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576919131009" />
-    <state width="920" height="179" key="GridCell.Tab.0.right" timestamp="1576919131010">
+    <state width="1316" height="238" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576960494151" />
+    <state width="1316" height="238" key="GridCell.Tab.0.right" timestamp="1576960494151">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="920" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576919131010" />
-    <state width="1316" height="154" key="GridCell.Tab.1.bottom" timestamp="1576359090975">
+    <state width="1316" height="238" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576960494151" />
+    <state width="1316" height="238" key="GridCell.Tab.1.bottom" timestamp="1576960494118">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1316" height="154" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576359090975" />
-    <state width="1316" height="154" key="GridCell.Tab.1.center" timestamp="1576359090975">
+    <state width="1316" height="238" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576960494118" />
+    <state width="1316" height="238" key="GridCell.Tab.1.center" timestamp="1576960494117">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1316" height="154" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576359090975" />
-    <state width="1316" height="154" key="GridCell.Tab.1.left" timestamp="1576359090975">
+    <state width="1316" height="238" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1576960494117" />
+    <state width="1316" height="238" key="GridCell.Tab.1.left" timestamp="1576960494117">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1316" height="154" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576359090975" />
-    <state width="1316" height="154" key="GridCell.Tab.1.right" timestamp="1576359090975">
+    <state width="1316" height="238" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1576960494117" />
+    <state width="1316" height="238" key="GridCell.Tab.1.right" timestamp="1576960494118">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1316" height="154" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576359090975" />
+    <state width="1316" height="238" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1576960494118" />
     <state x="555" y="88" key="RollbackChangesDialog" timestamp="1576786424061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="555" y="88" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576786424061" />
-    <state x="207" y="1" key="SettingsEditor" timestamp="1576918537942">
+    <state x="207" y="1" key="SettingsEditor" timestamp="1576930540145">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="207" y="1" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1576918537942" />
+    <state x="207" y="1" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1576930540145" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1576917329317">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -267,9 +289,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="578" y="101" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.1366.728@0.0.1366.728" timestamp="1576332965159" />
-    <state x="346" y="49" key="search.everywhere.popup" timestamp="1576332913857">
+    <state x="424" y="11" key="refactoring.ChangeSignatureDialog" timestamp="1576934906274">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1576332913857" />
+    <state x="424" y="11" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1576934906274" />
+    <state x="346" y="49" width="672" height="598" key="search.everywhere.popup" timestamp="1576934612660">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="598" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1576934612660" />
   </component>
 </project>
