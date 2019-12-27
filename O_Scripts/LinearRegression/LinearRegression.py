@@ -11,7 +11,6 @@ style.use('ggplot')
 
 df = pd.read_csv("Data/wik2000-2018.csv")
 df.index = df['Date']
-df = df[['Date', 'Adj. Open', 'Adj. High', 'Adj. Low', 'Adj. Close', 'Adj. Volume']]
 df['HL_PCT'] = (df['Adj. High'] - df['Adj. Close']) / df['Adj. Close'] * 100
 df['PCT_change'] = (df['Adj. Close'] - df['Adj. Open']) / df['Adj. Open'] * 100
 

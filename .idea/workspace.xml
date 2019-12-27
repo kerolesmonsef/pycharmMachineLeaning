@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c41c03ca-80b1-42e5-8529-d7b6bbb96892" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Data/Classification/movies_recommendation_data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/O_Scripts/KNN/KNN_recommend_movies.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/O_Scripts/KNN/OwnKKN.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/O_Scripts/ResidualPlot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MachineLearning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MachineLearning.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/O_Scripts/LinearRegression/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/O_Scripts/LinearRegression/test.py" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="c41c03ca-80b1-42e5-8529-d7b6bbb96892" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +27,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Data" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -78,6 +69,9 @@
       <module name="MachineLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -117,6 +111,9 @@
       <module name="MachineLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -174,10 +171,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.KNN_recommend_movies" />
       <item itemvalue="Python.LinearRegression" />
       <item itemvalue="Python.OwnKKN" />
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.KNN_recommend_movies" />
     </list>
     <recent_temporary>
       <list>
@@ -243,48 +240,55 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="lastdsa" />
     <option name="LAST_COMMIT_MESSAGE" value="lastdsa" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
-    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" />
-    <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" />
-    <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" />
-    <state x="349" y="0" key="CommitChangelistDialog2" />
-    <state x="349" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" />
-    <state x="417" y="128" key="EnvironmentVariablesDialog" />
-    <state x="417" y="128" key="EnvironmentVariablesDialog/0.0.1366.728@0.0.1366.728" />
-    <state x="463" y="121" key="FileChooserDialogImpl" />
-    <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" />
-    <state width="920" height="179" key="GridCell.Tab.0.bottom" />
-    <state width="920" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" />
-    <state width="920" height="179" key="GridCell.Tab.0.center" />
-    <state width="920" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" />
-    <state width="920" height="179" key="GridCell.Tab.0.left" />
-    <state width="920" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" />
-    <state width="920" height="179" key="GridCell.Tab.0.right" />
-    <state width="920" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" />
-    <state width="1316" height="154" key="GridCell.Tab.1.bottom" />
-    <state width="1316" height="154" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" />
-    <state width="1316" height="154" key="GridCell.Tab.1.center" />
-    <state width="1316" height="154" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" />
-    <state width="1316" height="154" key="GridCell.Tab.1.left" />
-    <state width="1316" height="154" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" />
-    <state width="1316" height="154" key="GridCell.Tab.1.right" />
-    <state width="1316" height="154" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" />
-    <state x="555" y="88" key="RollbackChangesDialog" />
-    <state x="555" y="88" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" />
-    <state x="207" y="1" key="SettingsEditor" />
-    <state x="207" y="1" key="SettingsEditor/0.0.1366.728@0.0.1366.728" />
-    <state width="498" height="446" key="SwitcherDM" />
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" />
-    <state x="390" y="190" key="com.intellij.ide.util.TipDialog" />
-    <state x="390" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" />
-    <state x="578" y="101" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" />
-    <state x="578" y="101" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.1366.728@0.0.1366.728" />
-    <state x="346" y="49" key="search.everywhere.popup" />
-    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" />
+    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577428277122" />
+    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state x="394" y="173" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577428460291">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="394" y="173" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1577428460291" />
+    <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577428277122" />
+    <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state x="349" y="0" key="CommitChangelistDialog2" timestamp="1577428277122" />
+    <state x="349" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state x="417" y="128" key="EnvironmentVariablesDialog" timestamp="1577428277122" />
+    <state x="417" y="128" key="EnvironmentVariablesDialog/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1577428277122" />
+    <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state width="920" height="179" key="GridCell.Tab.0.bottom" timestamp="1577428277122" />
+    <state width="920" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state width="920" height="179" key="GridCell.Tab.0.center" timestamp="1577428277122" />
+    <state width="920" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state width="920" height="179" key="GridCell.Tab.0.left" timestamp="1577428277122" />
+    <state width="920" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state width="920" height="179" key="GridCell.Tab.0.right" timestamp="1577428277122" />
+    <state width="920" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state width="1316" height="154" key="GridCell.Tab.1.bottom" timestamp="1577428277122" />
+    <state width="1316" height="154" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state width="1316" height="154" key="GridCell.Tab.1.center" timestamp="1577428277122" />
+    <state width="1316" height="154" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state width="1316" height="154" key="GridCell.Tab.1.left" timestamp="1577428277122" />
+    <state width="1316" height="154" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state width="1316" height="154" key="GridCell.Tab.1.right" timestamp="1577428277122" />
+    <state width="1316" height="154" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state x="555" y="88" key="RollbackChangesDialog" timestamp="1577428277122" />
+    <state x="555" y="88" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state x="207" y="1" key="SettingsEditor" timestamp="1577428277122" />
+    <state x="207" y="1" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1577428277122" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state x="390" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1577428346431">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1577428346431" />
+    <state x="578" y="101" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1577428277122" />
+    <state x="578" y="101" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state x="346" y="49" key="search.everywhere.popup" timestamp="1577428277122" />
+    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
