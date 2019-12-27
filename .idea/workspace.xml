@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c41c03ca-80b1-42e5-8529-d7b6bbb96892" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Data/Classification/movies_recommendation_data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/O_Scripts/KNN/KNN_recommend_movies.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/O_Scripts/KNN/OwnKKN.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/O_Scripts/ResidualPlot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MachineLearning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MachineLearning.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/O_Scripts/LinearRegression/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/O_Scripts/LinearRegression/test.py" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="c41c03ca-80b1-42e5-8529-d7b6bbb96892" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,10 +171,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.KNN_recommend_movies" />
       <item itemvalue="Python.LinearRegression" />
       <item itemvalue="Python.OwnKKN" />
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.KNN_recommend_movies" />
     </list>
     <recent_temporary>
       <list>
@@ -257,6 +247,10 @@
   <component name="WindowStateProjectService">
     <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577428277122" />
     <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
+    <state x="394" y="173" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577428460291">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="394" y="173" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1577428460291" />
     <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577428277122" />
     <state x="346" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1577428277122" />
     <state x="349" y="0" key="CommitChangelistDialog2" timestamp="1577428277122" />
