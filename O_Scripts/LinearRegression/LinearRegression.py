@@ -1,12 +1,14 @@
 import pandas as pd
 import numpy as np
 import math, datetime
-from sklearn import preprocessing, svm
+from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.neighbors import KNeighborsRegressor
 import matplotlib.pyplot as plt
 from matplotlib import style
 from statistics import mean
+
 style.use('ggplot')
 
 df = pd.read_csv("Data/wik2000-2018.csv")

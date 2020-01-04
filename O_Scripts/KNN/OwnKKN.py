@@ -23,9 +23,8 @@ def k_nearest_neighbors(data, predict, k=3):
     return vote_result
 
 
-df = pd.read_csv('Data/breast_cancer_wisconsin.data')
+df = pd.read_csv('Data/Classification/breast_cancer_wisconsin.csv')
 df.replace('?', -99999, inplace=True)
-df.drop(['id'], 1, inplace=True)
 full_data = df.astype(float).values.tolist()
 
 random.shuffle(full_data)
