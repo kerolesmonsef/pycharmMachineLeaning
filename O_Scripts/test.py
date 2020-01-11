@@ -1,25 +1,20 @@
-import math
+from sklearn.datasets import load_wine
+import pandas as pd
+import numpy as np
+np.set_printoptions(precision=4)
+from matplotlib import pyplot as plt
+import seaborn as sns
+sns.set()
+from sklearn.preprocessing import LabelEncoder
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+
+wine = load_wine()
+X = pd.DataFrame(wine.data, columns=wine.feature_names)
+y = pd.Categorical.from_codes(wine.target, wine.target_names)
 
 
-def average(x):
-    assert len(x) > 0
-    return float(sum(x)) / len(x)
-
-
-def pearson_def(x, y):
-    assert len(x) == len(y)
-    n = len(x)
-    assert n > 0
-    avg_x = average(x)
-    avg_y = average(y)
-    diffprod = 0
-    xdiff2 = 0
-    ydiff2 = 0
-    for idx in range(n):
-        xdiff = x[idx] - avg_x
-        ydiff = y[idx] - avg_y
-        diffprod += xdiff * ydiff
-        xdiff2 += xdiff * xdiff
-        ydiff2 += ydiff * ydiff
-    print(xdiff2)
-    return diffprod / math.sqrt(xdiff2 * ydiff2)
+lda = LinearDiscriminantAnalysis()
+X_lda = lda.fit_transform(X, y)
