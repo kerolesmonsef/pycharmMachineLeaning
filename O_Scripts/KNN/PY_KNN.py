@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
-df = pd.read_csv('Data/Classification/breast_cancer_wisconsin.csv')
+df = pd.read_csv('../../Data/Classification/breast_cancer_wisconsin.csv')
 df.replace('?', -99999, inplace=True)
 X = df.drop(['class'], 1)
 y = df['class']
