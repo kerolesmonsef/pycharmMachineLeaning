@@ -22,7 +22,6 @@ class Cookie(Pmf):
         for hypo in self.Values():
             like = self.Likelihood(data, hypo)
             self.Mult(hypo, like)
-            self.Mult(hypo, (5/8))
         self.Normalize()
 
 
@@ -30,3 +29,4 @@ if __name__ == "__main__":
     hypos = ['Bowl 1', 'Bowl 2']
     pmf = Cookie(hypos)
     pmf.Update('vanilla')
+    pmf.Print()

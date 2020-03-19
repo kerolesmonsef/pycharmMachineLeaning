@@ -124,7 +124,7 @@ class _DictWrapper(object):
             self.InitMapping,
             self.InitSequence,
             self.InitFailure,
-            ]
+        ]
 
         for method in init_methods:
             try:
@@ -1457,7 +1457,7 @@ def EvalPoissonPmf(k, lam):
     # should be 0.0
     return scipy.stats.poisson.pmf(k, lam)
 
-    #return lam ** k * math.exp(-lam) / math.factorial(k)
+    # return lam ** k * math.exp(-lam) / math.factorial(k)
 
 
 def MakePoissonPmf(lam, high, step=1):
@@ -1564,6 +1564,7 @@ class Beta(object):
 
     See http://en.wikipedia.org/wiki/Beta_distribution
     """
+
     def __init__(self, alpha=1, beta=1, name=''):
         """Initializes a Beta distribution."""
         self.alpha = alpha
@@ -1738,5 +1739,3 @@ def LogBinomialCoef(n, k):
     Returns: float
     """
     return n * log(n) - k * log(k) - (n - k) * log(n - k)
-
-
