@@ -27,7 +27,26 @@ import numpy
 import random
 
 import scipy.stats
-from scipy.special import erf, erfinv
+from scipy.special import erf, erfinv, gammaln
+
+ROOT2 = math.sqrt(2)
+
+
+class Pmf:
+    pass
+
+
+class Pdf:
+    pass
+
+
+def RandomSeed(x):
+    """Initialize the random and numpy.random generators.
+
+    x: int seed
+    """
+    random.seed(x)
+    numpy.random.seed(x)
 
 
 def Odds(p):
@@ -152,7 +171,7 @@ class _DictWrapper(object):
         for value, prob in values.items():
             self.Set(value, prob)
 
-    def InitPmf(self, values):
+    def InitPmf(self, values: Pmf) -> None:
         """Initializes with a Pmf.
 
         values: Pmf object
@@ -363,6 +382,7 @@ class Pmf(_DictWrapper):
     Values can be any hashable type; probabilities are floating-point.
     Pmfs are not necessarily normalized.
     """
+    label = "label"
 
     def Prob(self, x, default=0):
         """Gets the probability associated with the value x.
@@ -385,12 +405,87 @@ class Pmf(_DictWrapper):
         return MakeCdfFromPmf(self, name=name)
 
     def ProbGreater(self, x):
+        """Probability that a sample from this Pmf exceeds x.
+
+        x: number
+
+        returns: float probability
+        """
         t = [prob for (val, prob) in self.d.items() if val > x]
         return sum(t)
 
     def ProbLess(self, x):
+        """Probability that a sample from this Pmf is less than x.
+
+        x: number
+
+        returns: float probability
+        """
         t = [prob for (val, prob) in self.d.items() if val < x]
         return sum(t)
+
+    def __lt__(self, obj):
+        """Less than.
+
+        obj: number or _DictWrapper
+
+        returns: float probability
+        """
+        if isinstance(obj, _DictWrapper):
+            return PmfProbLess(self, obj)
+        else:
+            return self.ProbLess(obj)
+
+    def __gt__(self, obj):
+        """Greater than.
+
+        obj: number or _DictWrapper
+
+        returns: float probability
+        """
+        if isinstance(obj, _DictWrapper):
+            return PmfProbGreater(self, obj)
+        else:
+            return self.ProbGreater(obj)
+
+    def __ge__(self, obj):
+        """Greater than or equal.
+
+        obj: number or _DictWrapper
+
+        returns: float probability
+        """
+        return 1 - (self < obj)
+
+    def __le__(self, obj):
+        """Less than or equal.
+
+        obj: number or _DictWrapper
+
+        returns: float probability
+        """
+        return 1 - (self > obj)
+
+    def __eq__(self, obj):
+        """Equal to.
+
+        obj: number or _DictWrapper
+
+        returns: float probability
+        """
+        if isinstance(obj, _DictWrapper):
+            return PmfProbEqual(self, obj)
+        else:
+            return self.Prob(obj)
+
+    def __ne__(self, obj):
+        """Not equal to.
+
+        obj: number or _DictWrapper
+
+        returns: float probability
+        """
+        return 1 - (self == obj)
 
     def Normalize(self, fraction=1.0):
         """Normalizes this PMF so the sum of all probs is fraction.
@@ -782,6 +877,7 @@ class Cdf(object):
         ps: sequence of probabilities
         name: string used as a graph label.
     """
+    label = "label"
 
     def __init__(self, xs=None, ps=None, name=''):
         self.xs = [] if xs is None else xs
@@ -1239,7 +1335,7 @@ class Pdf(object):
         """
         raise UnimplementedMethodException()
 
-    def MakePmf(self, xs, name=''):
+    def MakePmf(self, xs, name='') -> Pmf:
         """Makes a discrete version of this Pdf, evaluated at xs.
 
         xs: equally-spaced sequence of values
@@ -1309,7 +1405,7 @@ def Percentile(pmf, percentage):
             return val
 
 
-def CredibleInterval(pmf, percentage=90):
+def CredibleInterval(pmf: Pmf, percentage=90):
     """Computes a credible interval for a given distribution.
 
     If percentage=90, computes the 90% CI.
@@ -1404,7 +1500,7 @@ def SampleSum(dists, n):
     return pmf
 
 
-def EvalGaussianPdf(x, mu, sigma):
+def EvalGaussianPdf(x, mu, sigma) -> float:
     """Computes the unnormalized PDF of the normal distribution.
 
     x: value
@@ -1416,7 +1512,7 @@ def EvalGaussianPdf(x, mu, sigma):
     return scipy.stats.norm.pdf(x, mu, sigma)
 
 
-def MakeGaussianPmf(mu, sigma, num_sigmas, n=201):
+def MakeGaussianPmf(mu, sigma, num_sigmas, n=201) -> Pmf:
     """Makes a PMF discrete approx to a Gaussian distribution.
 
     mu: float mean
@@ -1445,7 +1541,7 @@ def EvalBinomialPmf(k, n, p):
     return scipy.stats.binom.pmf(k, n, p)
 
 
-def EvalPoissonPmf(k, lam):
+def EvalPoissonPmf(k, lam) -> float:
     """Computes the Poisson PMF.
 
     k: number of events
@@ -1453,14 +1549,10 @@ def EvalPoissonPmf(k, lam):
 
     returns: float probability
     """
-    # don't use the scipy function.  for lam=0 it returns NaN;
-    # should be 0.0
     return scipy.stats.poisson.pmf(k, lam)
 
-    # return lam ** k * math.exp(-lam) / math.factorial(k)
 
-
-def MakePoissonPmf(lam, high, step=1):
+def MakePoissonPmf(lam, high, step=1) -> Pmf:
     """Makes a PMF discrete approx to a Poisson distribution.
 
     lam: parameter lambda in events per unit time
@@ -1509,7 +1601,7 @@ def MakeExponentialPmf(lam, high, n=200):
     return pmf
 
 
-def StandardGaussianCdf(x, root2=math.sqrt(2)):
+def StandardGaussianCdf(x):
     """Evaluates the CDF of the standard Gaussian distribution.
 
     See http://en.wikipedia.org/wiki/Normal_distribution
@@ -1521,7 +1613,7 @@ def StandardGaussianCdf(x, root2=math.sqrt(2)):
     Returns:
         float
     """
-    return (erf(x / root2) + 1) / 2
+    return (erf(x / ROOT2) + 1) / 2
 
 
 def GaussianCdf(x, mu=0, sigma=1):
@@ -1555,7 +1647,7 @@ def GaussianCdfInverse(p, mu=0, sigma=1):
     Returns:
         float
     """
-    x = root2 * erfinv(2 * p - 1)
+    x = ROOT2 * erfinv(2 * p - 1)
     return mu + x * sigma
 
 
@@ -1587,6 +1679,14 @@ class Beta(object):
     def Random(self):
         """Generates a random variate from this distribution."""
         return random.betavariate(self.alpha, self.beta)
+
+    def Sample(self, n):
+        """Generates a random sample from this distribution.
+
+        n: int sample size
+        """
+        size = n,
+        return numpy.random.beta(self.alpha, self.beta, size)
 
     def EvalPdf(self, x):
         """Evaluates the PDF at x."""

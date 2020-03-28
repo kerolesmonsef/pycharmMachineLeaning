@@ -421,7 +421,7 @@ def Hist(hist, **options):
                           "Or try providing width option."
                           )
 
-    options = _Underride(options, label=hist.label)
+    options = _Underride(options, name=hist.label)
     options = _Underride(options, align='center')
     if options['align'] == 'left':
         options['align'] = 'edge'
