@@ -99,7 +99,7 @@ class GainCalculator(object):
 
         return bids, gains
 
-    def ExpectedGain(self, bid):
+    def ExpectedGain(self, bid: float) -> float:
         """Computes the expected return of a given bid.
 
         bid: your bid
@@ -111,7 +111,7 @@ class GainCalculator(object):
             total += prob * gain
         return total
 
-    def Gain(self, bid, price):
+    def Gain(self, bid: float, price: float) -> float:
         """Computes the return of a bid, given the actual price.
 
         bid: number
@@ -155,7 +155,7 @@ class Player(object):
         diffs: sequence of underness (negative means over)
         """
         self.pdf_price = thinkbayes.EstimatedPdf(prices)  # craeted a { Kernel density estimation } object
-        self.cdf_diff = thinkbayes.MakeCdfFromList(diffs) # 
+        self.cdf_diff = thinkbayes.MakeCdfFromList(diffs)  # type : thinkplot.Cdf
 
         mu = 0
         std = numpy.std(diffs)
@@ -240,21 +240,18 @@ def MakePlots(player1, player2):
     """
 
     # plot the prior distribution of price for both players
-    thinkplot.Clf()
-    thinkplot.PrePlot(num=2)
+    # thinkplot.Clf()
+    # thinkplot.PrePlot(num=2)
     pmf1 = player1.PmfPrice()
     pmf1.name = 'showcase 1'
     pmf2 = player2.PmfPrice()
     pmf2.name = 'showcase 2'
-    thinkplot.Pmfs([pmf1, pmf2])
-    # thinkplot.Save(root='price1',
-    #                xlabel='price ($)',
-    #                ylabel='PDF',
-    #                formats=FORMATS)
+    # thinkplot.Pmfs([pmf1, pmf2])
+    # thinkplot.Pmfs([player1.posterior, player2.posterior])
 
     # plot the historical distribution of underness for both players
-    thinkplot.Clf()
-    thinkplot.PrePlot(num=2)
+    # thinkplot.Clf()
+    # thinkplot.PrePlot(num=2)
     cdf1 = player1.CdfDiff()
     cdf1.name = 'player 1'
     cdf2 = player2.CdfDiff()
@@ -268,7 +265,7 @@ def MakePlots(player1, player2):
 
     print('Player 2 overbids', player2.ProbOverbid())
 
-    thinkplot.Cdfs([cdf1, cdf2])
+    # thinkplot.Cdfs([cdf1, cdf2])
     # thinkplot.Save(root='price2',
     #                xlabel='diff ($)',
     #                ylabel='CDF',
@@ -292,7 +289,7 @@ def MakePlayers():
     return player1, player2
 
 
-def PlotExpectedGains(guess1=20000, guess2=40000):
+def PlotExpectedGains(guess1: float = 20000, guess2: float = 40000):
     """Plots expected gains as a function of bid.
 
     guess1: player1's estimate of the price of showcase 1
@@ -304,38 +301,36 @@ def PlotExpectedGains(guess1=20000, guess2=40000):
     player1.MakeBeliefs(guess1)
     player2.MakeBeliefs(guess2)
 
-    print('Player 1 prior mle', player1.prior.MaximumLikelihood())
-    print('Player 2 prior mle', player2.prior.MaximumLikelihood())
+    thinkplot.Pmfs([player1.posterior, player1.prior])
+    # thinkplot.Pmfs([player2.posterior, player2.prior])
+
+    print('Player 1 prior MaximumLikelihood : ', player1.prior.MaximumLikelihood())
+    print('Player 2 prior MaximumLikelihood : ', player2.prior.MaximumLikelihood())
 
     print('Player 1 mean', player1.posterior.Mean())
 
     print('Player 2 mean', player2.posterior.Mean())
 
-    print('Player 1 mle', player1.posterior.MaximumLikelihood())
+    print('Player 1 posterior MaximumLikelihood : ', player1.posterior.MaximumLikelihood())
 
-    print('Player 2 mle', player2.posterior.MaximumLikelihood())
+    print('Player 2 posterior MaximumLikelihood : ', player2.posterior.MaximumLikelihood())
 
-    player1.PlotBeliefs('price3')
-    player2.PlotBeliefs('price4')
+    # player1.PlotBeliefs('price3')
+    # player2.PlotBeliefs('price4')
 
     calc1 = GainCalculator(player1, player2)
     calc2 = GainCalculator(player2, player1)
 
-    thinkplot.Clf()
-    thinkplot.PrePlot(num=2)
+    # thinkplot.Clf()
+    # thinkplot.PrePlot(num=2)
 
     bids, gains = calc1.ExpectedGains()
-    thinkplot.Plot(bids, gains, label='Player 1')
+    # thinkplot.Plot(bids, gains, label='Player 1')
     print('Player 1 optimal bid', max(list(zip(gains, bids))))
 
     bids, gains = calc2.ExpectedGains()
-    thinkplot.Plot(bids, gains, label='Player 2')
+    # thinkplot.Plot(bids, gains, label='Player 2')
     print('Player 2 optimal bid', max(list(zip(gains, bids))))
-
-    # thinkplot.Save(root='price5',
-    #                xlabel='bid ($)',
-    #                ylabel='expected gain ($)',
-    #                formats=FORMATS)
 
 
 def PlotOptimalBid():
@@ -370,7 +365,7 @@ def PlotOptimalBid():
                    formats=FORMATS)
 
 
-def TestCode(calc):
+def TestCode(calc: GainCalculator):
     """Check some intermediate results.
 
     calc: GainCalculator
@@ -388,8 +383,8 @@ def TestCode(calc):
 
 
 def main():
-    PlotExpectedGains()
-    # PlotOptimalBid()
+    # PlotExpectedGains()
+    PlotOptimalBid()
 
 
 if __name__ == '__main__':

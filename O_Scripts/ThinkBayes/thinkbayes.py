@@ -4,6 +4,7 @@ by Allen B. Downey, available from greenteapress.com
 Copyright 2012 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 """
+from typing import List, Dict
 
 """This file contains class definitions for:
 
@@ -25,6 +26,7 @@ import logging
 import math
 import numpy
 import random
+import numpy as np
 
 import scipy.stats
 from scipy.special import erf, erfinv, gammaln
@@ -383,6 +385,9 @@ class Pmf(_DictWrapper):
     Pmfs are not necessarily normalized.
     """
     label = "label"
+
+    def __hash__(self):
+        return id(self)
 
     def Prob(self, x, default=0):
         """Gets the probability associated with the value x.
@@ -839,7 +844,7 @@ def MakePmfFromCdf(cdf, name=None):
     return pmf
 
 
-def MakeMixture(metapmf, name='mix'):
+def MakeMixture(metapmf: Pmf, name: str = 'mix') -> Pmf:
     """Make a mixture distribution.
 
     Args:
@@ -1183,7 +1188,7 @@ class Suite(Pmf):
             like = self.LogLikelihood(data, hypo)
             self.Incr(hypo, like)
 
-    def UpdateSet(self, dataset):
+    def UpdateSet(self, dataset: List) -> None:
         """Updates each hypothesis based on the dataset.
 
         This is more efficient than calling Update repeatedly because
@@ -1215,7 +1220,7 @@ class Suite(Pmf):
         for data in dataset:
             self.LogUpdate(data)
 
-    def Likelihood(self, data, hypo):
+    def Likelihood(self, data: float, hypo: float) -> float:
         """Computes the likelihood of the data under the hypothesis.
 
         hypo: some representation of the hypothesis
@@ -1512,7 +1517,7 @@ def EvalGaussianPdf(x, mu, sigma) -> float:
     return scipy.stats.norm.pdf(x, mu, sigma)
 
 
-def MakeGaussianPmf(mu, sigma, num_sigmas, n=201) -> Pmf:
+def MakeGaussianPmf(mu: float, sigma: float, num_sigmas: int, n: int = 201) -> Pmf:
     """Makes a PMF discrete approx to a Gaussian distribution.
 
     mu: float mean
@@ -1533,7 +1538,7 @@ def MakeGaussianPmf(mu, sigma, num_sigmas, n=201) -> Pmf:
     return pmf
 
 
-def EvalBinomialPmf(k, n, p):
+def EvalBinomialPmf(k, n, p) -> float:
     """Evaluates the binomial pmf.
 
     Returns the probabily of k successes in n trials with probability p.
@@ -1541,18 +1546,18 @@ def EvalBinomialPmf(k, n, p):
     return scipy.stats.binom.pmf(k, n, p)
 
 
-def EvalPoissonPmf(k, lam) -> float:
+def EvalPoissonPmf(k: int, lam: float) -> float:
     """Computes the Poisson PMF.
 
-    k: number of events
-    lam: parameter lambda in events per unit time
+    k: int number of events
+    lam: float parameter lambda in events per unit time
 
     returns: float probability
     """
     return scipy.stats.poisson.pmf(k, lam)
 
 
-def MakePoissonPmf(lam, high, step=1) -> Pmf:
+def MakePoissonPmf(lam: float, high: int, step: int = 1) -> Pmf:
     """Makes a PMF discrete approx to a Poisson distribution.
 
     lam: parameter lambda in events per unit time
@@ -1568,7 +1573,7 @@ def MakePoissonPmf(lam, high, step=1) -> Pmf:
     return pmf
 
 
-def EvalExponentialPdf(x, lam):
+def EvalExponentialPdf(x: float, lam: float) -> float:
     """Computes the exponential PDF.
 
     x: value
@@ -1579,12 +1584,12 @@ def EvalExponentialPdf(x, lam):
     return lam * math.exp(-lam * x)
 
 
-def EvalExponentialCdf(x, lam):
+def EvalExponentialCdf(x: float, lam: float) -> float:
     """Evaluates CDF of the exponential distribution with parameter lam."""
     return 1 - math.exp(-lam * x)
 
 
-def MakeExponentialPmf(lam, high, n=200):
+def MakeExponentialPmf(lam: float, high: float, n: int = 200) -> Pmf:
     """Makes a PMF discrete approx to an exponential distribution.
 
     lam: parameter lambda in events per unit time
@@ -1632,7 +1637,7 @@ def GaussianCdf(x, mu=0, sigma=1):
     return StandardGaussianCdf(float(x - mu) / sigma)
 
 
-def GaussianCdfInverse(p, mu=0, sigma=1):
+def GaussianCdfInverse(p: float, mu: float = 0, sigma: float = 1) -> float:
     """Evaluates the inverse CDF of the gaussian distribution.
 
     See http://en.wikipedia.org/wiki/Normal_distribution#Quantile_function
@@ -1838,4 +1843,37 @@ def LogBinomialCoef(n, k):
 
     Returns: float
     """
-    return n * log(n) - k * log(k) - (n - k) * log(n - k)
+    return n * math.log(n) - k * logging.log(k) - (n - k) * math.log(n - k)
+
+
+def MakeNormalPmf(mu: float, sigma: float, num_sigmas: float, n: int = 201) -> Pmf:
+    """Makes a PMF discrete approx to a Normal distribution.
+
+    mu: float mean
+    sigma: float standard deviation
+    num_sigmas: how many sigmas to extend in each direction
+    n: number of values in the Pmf
+
+    returns: normalized Pmf
+    """
+    pmf = Pmf()
+    low = mu - num_sigmas * sigma
+    high = mu + num_sigmas * sigma
+
+    for x in np.linspace(low, high, n):
+        p = EvalNormalPdf(x, mu, sigma)
+        pmf.Set(x, p)
+    pmf.Normalize()
+    return pmf
+
+
+def EvalNormalPdf(x, mu, sigma):
+    """Computes the unnormalized PDF of the normal distribution.
+
+    x: value
+    mu: mean
+    sigma: standard deviation
+
+    returns: float probability density
+    """
+    return scipy.stats.norm.pdf(x, mu, sigma)

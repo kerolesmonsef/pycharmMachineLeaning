@@ -520,7 +520,7 @@ def Diff(t):
 
 
 def Cdf(cdf, complement=False, transform=None, **options):
-    """Plots a CDF as a line.
+    """Plots a CDF as a line.GaussianPmf
 
     Args:
       cdf: Cdf object

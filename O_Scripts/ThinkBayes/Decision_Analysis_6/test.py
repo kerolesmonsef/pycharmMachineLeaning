@@ -4,6 +4,7 @@ import O_Scripts.ThinkBayes.thinkbayes as thinkbayes
 import thinkplot
 import numpy
 import csv
+import thinkstats2
 
 
 def ReadCSV(filename='amr_db_d_win.csv') -> List:
@@ -52,8 +53,8 @@ def ReadData(filename='showcases.2011.csv'):
 def myfunc():
     prices = ReadCSV()
     pdf = thinkbayes.EstimatedPdf(prices)
-    low, high = min(prices), max(prices)
-    n = 101
+    low, high = -10000, max(prices)
+    n = 1010
     xs = numpy.linspace(low, high, n)
     pmf = pdf.MakePmf(xs)
     thinkplot.Pmf(pmf)
