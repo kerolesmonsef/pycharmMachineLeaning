@@ -51,5 +51,6 @@ if __name__ == "__main__":
     goal_dist1 = MakeGoalPmf(suite1)
     goal_dist2 = MakeGoalPmf(suite2)
 
-    thinkplot.Pmf(goal_dist1, color='red')
-    thinkplot.Pmf(goal_dist2, color='blue')
+    diff = goal_dist1 - goal_dist2
+
+    thinkplot.Pmf(diff)

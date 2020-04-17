@@ -409,7 +409,7 @@ class Pmf(_DictWrapper):
         """Makes a Cdf."""
         return MakeCdfFromPmf(self, name=name)
 
-    def ProbGreater(self, x):
+    def ProbGreater(self, x: float) -> float:
         """Probability that a sample from this Pmf exceeds x.
 
         x: number
@@ -419,7 +419,7 @@ class Pmf(_DictWrapper):
         t = [prob for (val, prob) in self.d.items() if val > x]
         return sum(t)
 
-    def ProbLess(self, x):
+    def ProbLess(self, x: float) -> float:
         """Probability that a sample from this Pmf is less than x.
 
         x: number
@@ -622,7 +622,7 @@ class Pmf(_DictWrapper):
             pmf.Set(v1 + other, p1)
         return pmf
 
-    def __sub__(self, other):
+    def __sub__(self, other) -> Pmf:
         """Computes the Pmf of the diff of values drawn from self and other.
 
         other: another Pmf
@@ -1428,7 +1428,7 @@ def CredibleInterval(pmf: Pmf, percentage=90):
     return interval
 
 
-def PmfProbLess(pmf1, pmf2):
+def PmfProbLess(pmf1: Pmf, pmf2: Pmf) -> float:
     """Probability that a value from pmf1 is less than a value from pmf2.
 
     Args:
