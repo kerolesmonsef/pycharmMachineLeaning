@@ -71,7 +71,7 @@ class OwnNaiveBayes:
         del (summaries[-1])
         return summaries
 
-    # Split dataset by class then calculate statistics for each row
+    # Split dataset by class then calculate statistics(mean , std , len) for each row
     def __summarize_by_class(self):
         separated = self.__separate_by_class()
         summaries = dict()
@@ -96,7 +96,7 @@ class OwnNaiveBayes:
         return probabilities
 
     # Predict the class for a given row
-    def predict(self, new_row,show_print = False):
+    def predict(self, new_row, show_print=False):
         summaries = self.__summarize_by_class()
         probabilities = self.__calculate_class_probabilities(summaries, new_row)
         best_label, best_prob = None, -1
@@ -110,17 +110,18 @@ class OwnNaiveBayes:
 
     def score(self):
         X = np.array(self.DataSet)
-        real_y = X[:,-1]
+        real_y = X[:, -1]
         X = X[:, :-1]
         pred_y = [self.predict(list(xi)) for xi in X]
-        score_array = [int(com == real_y[i]) for i,com in enumerate(pred_y)]
-        return sum(score_array)/len(self.DataSet)
+        score_array = [int(com == real_y[i]) for i, com in enumerate(pred_y)]
+        return sum(score_array) / len(self.DataSet)
+
 
 if __name__ == "__main__":
-    filename = 'Data/Classification/naive_bayes.data'
+    filename = '../../Data/Classification/naive_bayes.data'
     NB = OwnNaiveBayes(filename)
     row = [5.7, 2.9, 4.2, 1.3]
     # predict the label
-    label = NB.predict(row,show_print=True)
+    label = NB.predict(row, show_print=True)
     print('Data=%s, Predicted: %s' % (row, label))
-    print("Score : ",NB.score())
+    print("Score : ", NB.score())

@@ -59,11 +59,20 @@ if __name__ == "__main__":
     wine = load_wine()
     X = pd.DataFrame(wine.data, columns=wine.feature_names)
     y = pd.Categorical.from_codes(wine.target, wine.target_names)
-    lda = test();
+    lda = test()
     X_lda, y = lda.LDA(X, y)
 
-    X_train, X_test, y_train, y_test = train_test_split(X_lda, y, test_size=0.2)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
     clf = KNeighborsClassifier()
     clf.fit(X_train, y_train)
     accuracy = clf.score(X_test, y_test)
-    print(accuracy)
+    print('X before', X_train.shape)
+    print('accuracy before LDA', accuracy)
+
+    print("------------------ after --------")
+    X_train, X_test, y_train, y_test = train_test_split(X_lda, y, test_size=0.3, random_state=42)
+    clf = KNeighborsClassifier()
+    clf.fit(X_train, y_train)
+    accuracy = clf.score(X_test, y_test)
+    print('X after', X_train.shape)
+    print('accuracy after LDA', accuracy)
