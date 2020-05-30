@@ -11,7 +11,7 @@ from statistics import mean
 
 style.use('ggplot')
 
-df = pd.read_csv("Data/wik2000-2018.csv")
+df = pd.read_csv("../../Data/wik2000-2018.csv")
 df.index = df['Date']
 df['HL_PCT'] = (df['Adj. High'] - df['Adj. Close']) / df['Adj. Close'] * 100
 df['PCT_change'] = (df['Adj. Close'] - df['Adj. Open']) / df['Adj. Open'] * 100
@@ -20,7 +20,7 @@ df = df[['Date', 'Adj. Close', 'HL_PCT', 'PCT_change', 'Adj. Volume']]
 forecast_col = 'Adj. Close'
 df.fillna(-99999, inplace=True)
 
-forecast_out = int(math.ceil(0.01 * len(df)))
+forecast_out = int(math.ceil(0.1 * len(df)))
 df['label'] = df[forecast_col].shift(-forecast_out)  # the DF contain Nan In the End
 X = np.array(df.drop(['label', 'Date'], 1))
 X = preprocessing.scale(X)
@@ -32,7 +32,7 @@ y = np.array(df['label'])
 # X = preprocessing.scale(X)
 
 
-x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=30)
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=30)
 
 clf = LinearRegression(n_jobs=-1)
 clf.fit(x_train, y_train)
@@ -41,7 +41,7 @@ print("Accuracy = ", accuracy)
 forecast_set = clf.predict(X_lately)  # This is what we need the prediction to the future
 
 ###################################
-## This for Plotting The Result ##
+##  This for Plotting The Result ##
 ##################################
 df['Forecast'] = np.nan
 last_date = df.iloc[-1]['Date']
