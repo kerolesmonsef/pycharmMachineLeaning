@@ -76,3 +76,4 @@ if __name__ == "__main__":
     accuracy = clf.score(X_test, y_test)
     print('X after', X_train.shape)
     print('accuracy after LDA', accuracy)
+    input("press any key to continue .......")

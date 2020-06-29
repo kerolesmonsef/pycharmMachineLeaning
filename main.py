@@ -28,7 +28,7 @@ clf = LinearRegression(n_jobs=-1)
 clf.fit(x_train, y_train)
 print("Built In", clf.intercept_, clf.coef_)
 print("---------------------")
-g_d = Gradient_Descent(x_train, y_train, l_r=0.0001, N_iter=1000000);
+g_d = Gradient_Descent(x_train, y_train, l_r=0.001, N_iter=1000000);
 g_d.fit();
 print("Gradient_Descent", g_d.theta)
 print('--------- Errors------------')
