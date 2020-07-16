@@ -1,76 +1,58 @@
-from matplotlib.colors import ListedColormap
-from sklearn.datasets import make_moons
-from sklearn.decomposition import PCA
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
+import pandas as pd
+from sklearn.ensemble import BaggingClassifier
+from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
-from matplotlib import pyplot as plt
+from sklearn.tree import DecisionTreeClassifier
 import numpy as np
+from sklearn.utils import resample
 
-X, y = make_moons()
-# X = np.append(X, (X[:, 0] * X[:, 1]).reshape(-1, 1), axis=1)
-# X = np.append(X, (np.exp(X[:, 0] * X[:, 1])).reshape(-1, 1), axis=1)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
-pca = PCA(n_components=2)
-X_pca = pca.fit_transform(X)
+data = pd.read_csv('../Projects/Bank/Churn-Modelling.csv')
+y = data['Exited']
+data.drop(labels=(['Exited', 'RowNumber', 'CustomerId', 'Surname']), axis=1, inplace=True)
+X = data.copy()
+X_Gender_Geography_hot = pd.get_dummies(X[['Geography', 'Gender']])
 
-# lr = SVC()
-# lr.fit(X_pca, y_train)
+X[X_Gender_Geography_hot.columns] = X_Gender_Geography_hot[X_Gender_Geography_hot.columns]
+X.drop(labels=(['Geography', 'Gender']), axis=1, inplace=True)
 
+X_upsampled, y_upsampled = resample(X[y == 1],
+                                    y[y == 1],
+                                    replace=True,
+                                    n_samples=X[y == 0].shape[0],
+                                    random_state=123)
 
-def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
-    # setup marker generator and color map
-    markers = ('s', 'x', 'o', '^', 'v')
-    colors = ('red', 'blue', 'lightgreen', 'gray', 'cyan')
-    cmap = ListedColormap(colors[:len(np.unique(y))])
+X = np.vstack((X[y == 0], X_upsampled))
+y = np.hstack((y[y == 0], y_upsampled))
 
-    # plot the decision surface
-    x1_min, x1_max = X[:, 0].min() - 1, X[:, 0].max() + 1
-    x2_min, x2_max = X[:, 1].min() - 1, X[:, 1].max() + 1
-    xx1, xx2 = np.meshgrid(np.arange(x1_min, x1_max, resolution),
-                           np.arange(x2_min, x2_max, resolution))
-    Z = classifier.predict(np.array([xx1.ravel(), xx2.ravel()]).T)
-    Z = Z.reshape(xx1.shape)
-    plt.contourf(xx1, xx2, Z, alpha=0.3, cmap=cmap)
-    plt.xlim(xx1.min(), xx1.max())
-    plt.ylim(xx2.min(), xx2.max())
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=100, stratify=y)
 
-    for idx, cl in enumerate(np.unique(y)):
-        plt.scatter(x=X[y == cl, 0],
-                    y=X[y == cl, 1],
-                    alpha=0.8,
-                    c=colors[idx],
-                    marker=markers[idx],
-                    label=cl,
-                    edgecolor='black')
+tree = DecisionTreeClassifier(criterion='entropy',
+                              max_depth=None,
+                              random_state=1)
 
-    # highlight test samples
-    if test_idx:
-        # plot all samples
-        X_test, y_test = X[test_idx, :], y[test_idx]
+bag = BaggingClassifier(base_estimator=tree,
+                        n_estimators=500,
+                        max_samples=1.0,
+                        max_features=1.0,
+                        bootstrap=True,
+                        bootstrap_features=False,
+                        n_jobs=-1,
+                        random_state=1)
 
-        plt.scatter(X_test[:, 0],
-                    X_test[:, 1],
-                    c='',
-                    edgecolor='black',
-                    alpha=1.0,
-                    linewidth=1,
-                    marker='o',
-                    s=100,
-                    label='test set')
+tree = tree.fit(X_train, y_train)
+y_train_pred = tree.predict(X_train)
+y_test_pred = tree.predict(X_test)
 
+tree_train = accuracy_score(y_train, y_train_pred)
+tree_test = accuracy_score(y_test, y_test_pred)
+print('Decision tree train/test accuracies %.3f/%.3f'
+      % (tree_train, tree_test))
 
-# plot_decision_regions(X=X_pca, y=y_train, classifier=lr)
+bag = bag.fit(X_train, y_train)
+y_train_pred = bag.predict(X_train)
+y_test_pred = bag.predict(X_test)
 
-fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(7, 3))
-
-ax[0].scatter(X_pca[y == 0, 0], X_pca[y == 0, 1],
-              color='red', marker='^', alpha=0.5)
-ax[0].scatter(X_pca[y == 1, 0], X_pca[y == 1, 1],
-              color='blue', marker='o', alpha=0.5)
-
-ax[1].scatter(X_pca[y == 0, 0], np.zeros((50, 1)) + 0.02,
-              color='red', marker='^', alpha=0.5)
-ax[1].scatter(X_pca[y == 1, 0], np.zeros((50, 1)) - 0.02,
-              color='blue', marker='o', alpha=0.5)
-plt.show()
+bag_train = accuracy_score(y_train, y_train_pred)
+bag_test = accuracy_score(y_test, y_test_pred)
+print('Bagging train/test accuracies %.3f/%.3f'
+      % (bag_train, bag_test))

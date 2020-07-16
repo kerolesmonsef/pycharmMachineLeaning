@@ -13,7 +13,6 @@ from sklearn.svm import SVC
 class Own_PCA:
     def __init__(self, n_components=2):
         self.n_components = n_components
-        super(Own_PCA, self).__init__()
 
     def fit(self, X, y=None):
         cov_mat = np.cov(np.transpose(X))

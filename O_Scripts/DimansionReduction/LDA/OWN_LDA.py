@@ -13,10 +13,12 @@ sns.set()
 np.set_printoptions(precision=4)
 
 
-class test:
+class OWN_LDA:
     _w_matrix = []
 
     def LDA(self, X, y):
+        X = pd.DataFrame(X)
+        y = pd.Series(y)
         df = X.join(pd.Series(y, name='class'))
         _, dim = X.shape
         class_feature_means = {}
@@ -59,7 +61,7 @@ if __name__ == "__main__":
     wine = load_wine()
     X = pd.DataFrame(wine.data, columns=wine.feature_names)
     y = pd.Categorical.from_codes(wine.target, wine.target_names)
-    lda = test()
+    lda = OWN_LDA()
     X_lda, y = lda.LDA(X, y)
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
