@@ -2,8 +2,9 @@ import matplotlib.pyplot as plt
 
 
 class DChart:
-    # typo = '--' | 'go--' | '.' | ''
+
     def __init__(self, xs, ys, xLabel: str = "xLabel", yLabel: str = "yLabel", title: str = "title", typo: str = ''):
+        # typo = '--' | 'go--' | '.' | ''
         self.xs = xs
         self.ys = ys
         self.xLabel = xLabel

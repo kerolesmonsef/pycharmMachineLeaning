@@ -1,8 +1,7 @@
 import pandas as pd
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
-from sklearn import preprocessing
-from O_Scripts.LDA.OWN_LDA import LDA
+
 
 filename = 'Data/Classification/naive_bayes_pandas.data'
 df = pd.read_csv(filename)

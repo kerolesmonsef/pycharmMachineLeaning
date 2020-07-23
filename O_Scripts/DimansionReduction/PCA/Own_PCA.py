@@ -4,6 +4,7 @@ from sklearn.datasets import load_wine as dataset
 from sklearn.decomposition import PCA, KernelPCA
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, f1_score, recall_score
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
@@ -35,6 +36,7 @@ class Own_PCA:
 
 if __name__ == "__main__":
     X, y = dataset(return_X_y=True)
+
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
 
     steps = [
@@ -46,8 +48,11 @@ if __name__ == "__main__":
     pipe = Pipeline(steps)
 
     pipe.fit(X_train, y_train)
+    y_pred = pipe.predict(X_test)
     score = pipe.score(X_test, y_test)
-    print('score : ', score)
+    print('score : ', accuracy_score(y_pred, y_test))
+    print('f1_score : ', f1_score(y_test, y_pred, average='macro'))
+    print('recall_score : ', recall_score(y_pred, y_test, average='macro'))
     # pca = ()
     #
     # pca.fit(X_train)
