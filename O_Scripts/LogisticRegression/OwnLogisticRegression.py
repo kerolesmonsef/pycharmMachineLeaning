@@ -3,6 +3,7 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
+
 class LogisticRegressionGD(object):
     """Logistic Regression Classifier using gradient descent.
 
@@ -96,5 +97,5 @@ if __name__ == "__main__":
     Lr = LogisticRegressionGD()
     Lr.fit(X_train_01_subset, y_train_01_subset)
 
-    plt.scatter(range(len(Lr._learned_what)),Lr._learned_what)
+    plt.scatter(range(len(Lr._learned_what)), Lr._learned_what)
     plt.show()
