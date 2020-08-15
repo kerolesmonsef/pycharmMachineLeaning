@@ -34,6 +34,7 @@ X_upsampled, y_upsampled = resample(X_train[y_train == 1],
                                     replace=True,
                                     n_samples=X_train[y_train == 1].shape[0],
                                     random_state=123)
+
 # X_train = np.vstack((X_train[y_train == 0], X_upsampled))
 # y_train = np.hstack((y_train[y_train == 0], y_upsampled))
 
